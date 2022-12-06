@@ -1,0 +1,187 @@
+import React from 'react';
+import ProductItem from "../conponent1/ProductItem.js"
+
+import QuickView from '../conponent1/QuickView.js'
+const item ={
+    "CPU":[
+        {
+             "id":"C01",
+             "image":"img/CPU/CPU.PNG",
+             "productName":"Intel Pentium",
+             "so_luong_con":"100",
+             "gia_thanh":"1,290,000 đ"
+        },
+        {
+             "id":"C02",
+             "image":"img/CPU/CPU2.PNG",
+             "productName":"Intel Core i7 Gen 12",
+             "so_luong_con":"100",
+             "gia_thanh":"1,990,000 đ"
+        },
+        {
+             "id":"C03",
+             "image":"img/CPU/CPU3.PNG",
+             "productName":"Intel Core i5 Gen 10",
+             "so_luong_con":"100",
+             "gia_thanh":"1,590,000 đ"
+         },
+         {
+             "id":"C04",
+             "image":"img/CPU/CPU4.PNG",
+             "productName":"Intel Core i7 Gen 10",
+             "so_luong_con":"100",
+             "gia_thanh":"1,790,000 đ"
+         },
+         {
+             "id":"C05",
+             "image":"img/CPU/CPU5.PNG",
+             "productName":"Intel Core i9 Unclocked",
+             "so_luong_con":"50",
+             "gia_thanh":"2,790,000 đ"
+         },
+         {
+             "id":"C06",
+             "image":"img/CPU/CPU6.PNG",
+             "productName":"Intel Core i9 Gen 10",
+             "so_luong_con":"50",
+             "gia_thanh":"2,290,000 đ"
+         }
+       
+       
+       ]
+    
+}
+function CPU(){
+    return (
+        <React.Fragment>
+        <main>
+            <section className="container">
+            
+        <ul className="b-crumbs">
+        <li>
+            <a href="/">
+                Doanh mục SP
+            </a>
+        </li>
+        <li>
+            <a href="/PCW">
+                Linh kiện
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                CPU
+            </a>
+        </li>
+        </ul>     
+        {/* <!-- Catalog Sidebar - start --> */}
+    <div className="section-sb">
+
+        {/* <!-- Catalog Categories - start --> */}
+        <div className="section-sb-current">
+            <h3><a href="/linhkien">Linh kiện<span id="section-sb-toggle" className="section-sb-toggle"><span className="section-sb-ico"></span></span></a></h3>
+            <ul className="section-sb-list" id="section-sb-list">
+                <li className="categ-1">
+                    <a href="/RAM">
+                        <span className="categ-1-label">Ram</span>
+                    </a>
+                </li>
+                <li className="categ-1">
+                    <a href="/CPU">
+                        <span className="categ-1-label">CPU</span>
+                    </a>
+                </li>
+
+
+            </ul>
+        </div>
+        {/* <!-- Catalog Categories - end -->
+
+        <!-- Filter - start -->
+        
+        <!-- Filter - end --> */}
+
+    </div>
+    {/* <!-- Catalog Sidebar - end --> */}
+    {/* <!-- Catalog Items | Gallery V1 - start --> */}
+    <div className="section-cont">
+
+        {/* <!-- Catalog Topbar - start --> */}
+        <div className="section-top">
+
+            {/* <!-- View Mode --> */}
+            <ul className="section-mode">
+                <li className="section-mode-gallery active"><a title="View mode: Gallery" href="#"></a></li>
+                <li className="section-mode-list"><a title="View mode: List" href="#"></a></li>
+                <li className="section-mode-table"><a title="View mode: Table" href="#"></a></li>
+            </ul>
+
+            {/* <!-- Sorting --> */}
+            <div className="section-sortby">
+                <p>Mặc định</p>
+                <ul>
+                    <li>
+                        <a href="#">Sản phẩm nổi bật</a>
+                    </li>
+                    <li>
+                        <a href="#">Giá: Tăng dần</a>
+                    </li>
+                    <li>
+                        <a href="#">Giá: Giảm dần</a>
+                    </li>						
+                    <li>
+                        <a href="#">Mặc định</a>
+                    </li>
+                </ul>
+            </div>
+
+            {/* <!-- Count per page --> */}
+            <div className="section-count">
+                <p>12</p>
+                <ul>
+                    <li><a href="#">12</a></li>
+                    <li><a href="#">24</a></li>
+                    <li><a href="#">48</a></li>
+                </ul>
+            </div>
+
+        </div>
+        {/* <!-- Catalog Topbar - end --> */}
+        <div className="prod-items section-items" id="CPU">
+                        {item.CPU.map( CPU =>(
+                            <ProductItem
+                            key={CPU.id}
+                            image={CPU.image}
+                            id={CPU.id}
+                            gia_thanh={CPU.gia_thanh}
+                            /> 
+                        )
+                        )}
+                </div>
+        <ul className="pagi">
+            <li className="active"><span>1</span></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li className="pagi-next"><a href="#"><i className="fa fa-angle-double-right"></i></a></li>
+        </ul>		
+            
+            
+    
+
+    </div>
+    {/* <!-- Catalog Items | Gallery V1 - end --> */}
+    
+               
+                
+                <QuickView/>
+
+            </section>
+        </main>
+
+
+      
+  </React.Fragment>
+    )
+}
+export default CPU

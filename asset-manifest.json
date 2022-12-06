@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/thuongmaidientu/static/css/main.52cab62d.css",
+    "main.js": "/thuongmaidientu/static/js/main.eedf2eaa.js",
+    "static/js/787.b7204649.chunk.js": "/thuongmaidientu/static/js/787.b7204649.chunk.js",
+    "static/media/fontawesome-webfont.svg?v=4.7.0": "/thuongmaidientu/static/media/fontawesome-webfont.c1e38fd9e0e74ba58f7a.svg",
+    "static/media/blank.gif": "/thuongmaidientu/static/media/blank.cb6fdae23d283340076a.gif",
+    "static/media/fontawesome-webfont.eot": "/thuongmaidientu/static/media/fontawesome-webfont.8b43027f47b20503057d.eot",
+    "static/media/fontawesome-webfont.ttf?v=4.7.0": "/thuongmaidientu/static/media/fontawesome-webfont.1e59d2330b4c6deb84b3.ttf",
+    "static/media/glyphicons-halflings-regular.svg": "/thuongmaidientu/static/media/glyphicons-halflings-regular.060b2710bdbbe3dfe48b.svg",
+    "static/media/fontawesome-webfont.woff?v=4.7.0": "/thuongmaidientu/static/media/fontawesome-webfont.f691f37e57f04c152e23.woff",
+    "static/media/fontawesome-webfont.woff2?v=4.7.0": "/thuongmaidientu/static/media/fontawesome-webfont.20fd1704ea223900efa9.woff2",
+    "static/media/glyphicons-halflings-regular.ttf": "/thuongmaidientu/static/media/glyphicons-halflings-regular.4692b9ec53fd5972caa2.ttf",
+    "static/media/glyphicons-halflings-regular.woff": "/thuongmaidientu/static/media/glyphicons-halflings-regular.82b1212e45a2bc35dd73.woff",
+    "static/media/glyphicons-halflings-regular.eot": "/thuongmaidientu/static/media/glyphicons-halflings-regular.5be1347c682810f199c7.eot",
+    "static/media/glyphicons-halflings-regular.woff2": "/thuongmaidientu/static/media/glyphicons-halflings-regular.be810be3a3e14c682a25.woff2",
+    "static/media/fancybox_loading@2x.gif": "/thuongmaidientu/static/media/fancybox_loading@2x.d8f0a9727c7b19e2f0db.gif",
+    "index.html": "/thuongmaidientu/index.html",
+    "main.52cab62d.css.map": "/thuongmaidientu/static/css/main.52cab62d.css.map",
+    "main.eedf2eaa.js.map": "/thuongmaidientu/static/js/main.eedf2eaa.js.map",
+    "787.b7204649.chunk.js.map": "/thuongmaidientu/static/js/787.b7204649.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.52cab62d.css",
+    "static/js/main.eedf2eaa.js"
+  ]
+}

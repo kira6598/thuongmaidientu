@@ -136,9 +136,6 @@ const item ={
 function PCGaming(){
     return (
         <React.Fragment>
-        <main>
-            <section className="container">
-            
         <ul className="b-crumbs">
         <li>
             <a href="/">
@@ -146,39 +143,40 @@ function PCGaming(){
             </a>
         </li>
         <li>
-            <a href="/PCG">
-                PC
+            <a href="/PC">
+                PC Gaming
             </a>
         </li>
-        <li>
-            <a href="#">
-                PCGaming
-            </a>
-        </li>
+        {/* <li>
+            <button className="link-button">
+                {value}
+            </button>
+        </li> */}
         </ul>     
         {/* <!-- Catalog Sidebar - start --> */}
     <div className="section-sb">
 
         {/* <!-- Catalog Categories - start --> */}
         <div className="section-sb-current">
-            <h3><a href="/laptop">LapTop<span id="section-sb-toggle" className="section-sb-toggle"><span className="section-sb-ico"></span></span></a></h3>
+            <h3><a href="/PCG">PC Gaming<span id="section-sb-toggle" className="section-sb-toggle"><span className="section-sb-ico"></span></span></a></h3>
             <ul className="section-sb-list" id="section-sb-list">
                 <li className="categ-1">
                     <a href="/PCtrung">
-                        <span className="categ-1-label">PC Tầm Trung</span>
+                        <span className="categ-1-label">PC Gaming trung cấp</span>
                     </a>
                 </li>
                 <li className="categ-1">
                     <a href="/PCCao">
-                        <span className="categ-1-label">PC Cao Cấp</span>
+                        <span className="categ-1-label">PC Gaming Cao cấp</span>
                     </a>
                 </li>
                 <li className="categ-1">
                     <a href="/PCSieuCao">
-                        <span className="categ-1-label">PC Siêu Cao Cấp </span>
+                        <span className="categ-1-label">PC Gaming Siêu Cao cấp</span>
                     </a>
                 </li>
-
+                
+                
             </ul>
         </div>
         {/* <!-- Catalog Categories - end -->
@@ -197,77 +195,64 @@ function PCGaming(){
 
             {/* <!-- View Mode --> */}
             <ul className="section-mode">
-                <li className="section-mode-gallery active"><a title="View mode: Gallery" href="#"></a></li>
-                <li className="section-mode-list"><a title="View mode: List" href="#"></a></li>
-                <li className="section-mode-table"><a title="View mode: Table" href="#"></a></li>
+                <li className="section-mode-gallery active"><button title="View mode: Gallery" ></button></li>
+                <li className="section-mode-list"><button title="View mode: List" ></button></li>
+                <li className="section-mode-table"><button title="View mode: Table" ></button></li>
             </ul>
 
             {/* <!-- Sorting --> */}
-            <div className="section-sortby">
+            <div className="section-sortby" >
                 <p>Mặc định</p>
                 <ul>
                     <li>
-                        <a href="#">Sản phẩm nổi bật</a>
+                        <button className="sorting-button">Sản phẩm nổi bật</button>
                     </li>
                     <li>
-                        <a href="#">Giá: Tăng dần</a>
+                        <button className="sorting-button">Giá: Tăng dần</button>
                     </li>
                     <li>
-                        <a href="#">Giá: Giảm dần</a>
+                        <button className="sorting-button">Giá: Giảm dần</button>
                     </li>						
                     <li>
-                        <a href="#">Mặc định</a>
+                        <button className="sorting-button">Mặc định</button>
                     </li>
                 </ul>
             </div>
 
             {/* <!-- Count per page --> */}
-            <div className="section-count">
+            <div className="section-count" id='couting'>
                 <p>12</p>
                 <ul>
-                    <li><a href="#">12</a></li>
-                    <li><a href="#">24</a></li>
-                    <li><a href="#">48</a></li>
+                    <li><button className="number-button">12</button></li>
+                    <li><button className="number-button">24</button></li>
+                    <li><button className="number-button">48</button></li>
                 </ul>
             </div>
+            <div className="prod-items section-items" id="PCGaming">
+                    {item.PCGaming.map( product =>(
+                        <ProductItem
+                        key={product.id}
+                        image={product.image}
+                        id={product.id}
+                        gia_thanh={product.gia_thanh}
+                        /> 
+                    )
+                    )}
+            </div>
+
 
         </div>
         {/* <!-- Catalog Topbar - end --> */}
-        <div className="prod-items section-items" id="PCGaming">
-                        {item.PCGaming.map( laptop =>(
-                            <ProductItem
-                            key={laptop.id}
-                            image={laptop.image}
-                            id={laptop.id}
-                            gia_thanh={laptop.gia_thanh}
-                            /> 
-                        )
-                        )}
-                </div>
-        <ul className="pagi">
-            <li className="active"><span>1</span></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li className="pagi-next"><a href="#"><i className="fa fa-angle-double-right"></i></a></li>
-        </ul>		
+        
+            
             
             
     
 
     </div>
+    <QuickView/>
     {/* <!-- Catalog Items | Gallery V1 - end --> */}
-    
-               
-                
-                <QuickView/>
-
-            </section>
-        </main>
-
-
-      
-  </React.Fragment>
+    </React.Fragment>
     )
 }
 export default PCGaming

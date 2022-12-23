@@ -1,44 +1,42 @@
-import React from 'react';
-import ProductItem from "./ProductItem.js"
 const item= {
     "CPU":[
    {
-        "id":"CP01",
+        "id":"C01",
         "image":"img/CPU/CPU.PNG",
         "productName":"Intel Pentium",
         "so_luong_con":"100",
         "gia_thanh":"1,290,000 đ"
    },
    {
-        "id":"CP02",
+        "id":"C02",
         "image":"img/CPU/CPU2.PNG",
         "productName":"Intel Core i7 Gen 12",
         "so_luong_con":"100",
         "gia_thanh":"1,990,000 đ"
    },
    {
-        "id":"CP03",
+        "id":"C03",
         "image":"img/CPU/CPU3.PNG",
         "productName":"Intel Core i5 Gen 10",
         "so_luong_con":"100",
         "gia_thanh":"1,590,000 đ"
     },
     {
-        "id":"CP04",
+        "id":"C04",
         "image":"img/CPU/CPU4.PNG",
         "productName":"Intel Core i7 Gen 10",
         "so_luong_con":"100",
         "gia_thanh":"1,790,000 đ"
     },
     {
-        "id":"CP05",
+        "id":"C05",
         "image":"img/CPU/CPU5.PNG",
         "productName":"Intel Core i9 Unclocked",
         "so_luong_con":"50",
         "gia_thanh":"2,790,000 đ"
     },
     {
-        "id":"CP06",
+        "id":"C06",
         "image":"img/CPU/CPU6.PNG",
         "productName":"Intel Core i9 Gen 10",
         "so_luong_con":"50",
@@ -49,35 +47,35 @@ const item= {
   ],
     "LaptopAcer":[
     {
-        "id":"LT01",
+        "id":"L01",
         "image":"img/LapTop/Ltop1.PNG",
         "productName":"Acer Nitro 5 AN515 44 R9JM",
         "so_luong_con":"50",
         "gia_thanh":"15,290,000 đ"
     },
     {
-        "id":"LT02",
+        "id":"L02",
         "image":"img/LapTop/Ltop2.PNG",
         "productName":"Acer Nitro 5 AN515 55 5923",
         "so_luong_con":"50",
         "gia_thanh":"19,290,000 đ"
     },
     {
-        "id":"LT03",
+        "id":"L03",
         "image":"img/LapTop/Ltop3.PNG",
         "productName":"Acer Nitro 5 AN515 45 R3SM",
         "so_luong_con":"50",
         "gia_thanh":"17,290,000 đ"
     },
     {
-        "id":"LT04",
+        "id":"L04",
         "image":"img/LapTop/Ltop4.PNG",
         "productName":"Acer Nitro 5 AN515 55 51N4",
         "so_luong_con":"50",
         "gia_thanh":"16,590,000 đ"
     },
     {
-        "id":"LT05",
+        "id":"L05",
         "image":"img/LapTop/Ltop5.PNG",
         "productName":"Acer Nitro 5 AN515 56 79U2",
         "so_luong_con":"50",
@@ -85,35 +83,35 @@ const item= {
     }
   ],  "LaptopAsus":[
     {
-        "id":"LT06",
+        "id":"L06",
         "image":"img/LapTop/Ltop6.PNG",
         "productName":"Asus TUF F15 FX506LH HN002T",
         "so_luong_con":"50",
         "gia_thanh":"18,390,000 đ"
     },
     {
-        "id":"LT07",
+        "id":"L07",
         "image":"img/LapTop/Ltop7.PNG",
         "productName":"Asus TUF F15 FX506LH HN002T",
         "so_luong_con":"50",
         "gia_thanh":"16,190,000 đ"
     },
     {
-        "id":"LT08",
+        "id":"L08",
         "image":"img/LapTop/Ltop8.PNG",
         "productName":"Asus TUF A17 FA70611 H72B6T",
         "so_luong_con":"50",
         "gia_thanh":"15,890,000 đ"
     },
     {
-        "id":"LT09",
+        "id":"L09",
         "image":"img/LapTop/Ltop9.PNG",
         "productName":"Asus TUF F19 FX506LI HN096T",
         "so_luong_con":"50",
         "gia_thanh":"19,190,000 đ"
     },
     {
-        "id":"LT10",
+        "id":"L10",
         "image":"img/LapTop/Ltop10.PNG",
         "productName":"Asus TUF Gaming F19 FX506LU HN138T",
         "so_luong_con":"50",
@@ -121,42 +119,42 @@ const item= {
     }
   ], "LaptopMSI":[
     {
-        "id":"LT11",
+        "id":"L11",
         "image":"img/LapTop/Ltop11.PNG",
         "productName":"MSI GF63 Thin 9SCSR 1057VN",
         "so_luong_con":"50",
         "gia_thanh":"21,190,000 đ"
     },
     {
-        "id":"LT12",
+        "id":"L12",
         "image":"img/LapTop/Ltop12.PNG",
         "productName":"MSI GF63 Thin 10SCSR 014VN",
         "so_luong_con":"50",
         "gia_thanh":"20,190,000 đ"
     },
     {
-        "id":"LT13",
+        "id":"L13",
         "image":"img/LapTop/Ltop13.PNG",
         "productName":"MSI GF63 Thin 10SCSR 020VN",
         "so_luong_con":"50",
         "gia_thanh":"23,190,000 đ"
     },
     {
-        "id":"LT14",
+        "id":"L14",
         "image":"img/LapTop/Ltop14.PNG",
         "productName":"MSI GF63 Thin 10SCSR 830VN",
         "so_luong_con":"50",
         "gia_thanh":"22,990,000 đ"
     },
     {
-        "id":"LT15",
+        "id":"L15",
         "image":"img/LapTop/Ltop15.PNG",
         "productName":"MSI GF85 Thin 10SER-622VN",
         "so_luong_con":"50",
         "gia_thanh":"23,190,000 đ"
     },
     {
-        "id":"LT16",
+        "id":"L16",
         "image":"img/LapTop/Ltop16.PNG",
         "productName":"MSI GF85 Thin 10UE 241VN",
         "so_luong_con":"50",
@@ -164,21 +162,21 @@ const item= {
     }
   ],  "LaptopDell":[
     {
-        "id":"LT17",
+        "id":"L17",
         "image":"img/LapTop/Ltop17.PNG",
         "productName":"Dell Inspiron 15 3501 N3501C",
         "so_luong_con":"50",
         "gia_thanh":"9,190,000 đ"
     },
     {
-        "id":"LT19",
+        "id":"L19",
         "image":"img/LapTop/Ltop19.PNG",
         "productName":"Dell Inspiron 14 5406 7023",
         "so_luong_con":"50",
         "gia_thanh":"25,190,000 đ"
     },
     {
-        "id":"LT20",
+        "id":"L20",
         "image":"img/Laptop/Ltop20.PNG",
         "productName":"Dell Inspiron 15 7501 X3MRY1",
         "so_luong_con": "50",
@@ -406,35 +404,35 @@ const item= {
         "gia_thanh":"800,000 đ"
     },
     {
-        "id":"RM02",
+        "id":"r02",
         "image":"img/RAM/RAM2.PNG",
         "productName":"DIMM DDR4 8GB",
         "so_luong_con": "50",
         "gia_thanh":"790,000 đ"
     },
     {
-        "id":"RM03",
+        "id":"r03",
         "image":"img/RAM/RAM3.PNG",
         "productName":"PATRIOT 8GB",
         "so_luong_con": "50",
         "gia_thanh":"640,000 đ"
     },
     {
-        "id":"RM04",
+        "id":"r04",
         "image":"img/RAM/RAM4.PNG",
         "productName":"SAMSUNG DDR4 8GB",
         "so_luong_con": "50",
         "gia_thanh":"850,000 đ"
     },
     {
-        "id":"RM05",
+        "id":"r05",
         "image":"img/RAM/RAM5.PNG",
         "productName":"TRANSCEND 8GB",
         "so_luong_con": "50",
         "gia_thanh":"790,000 đ"
     },
     {
-        "id":"RM06",
+        "id":"r06",
         "image":"img/RAM/RAM6.PNG",
         "productName":"LEXAR DDR4 16GB",
         "so_luong_con": "50",
@@ -443,22 +441,3 @@ const item= {
   
   ]
   }
-function Laptop(){
-    return (
-        <React.Fragment>
-    <div className="prod-items section-items" id="Laptop">
-      {item.LaptopAcer.map( laptop =>(
-        <ProductItem
-        key={laptop.id}
-        image={laptop.image}
-        id={laptop.id}
-        gia_thanh={laptop.gia_thanh}
-        /> 
-      )
-      )}
-      </div>
-          
-      </React.Fragment>
-    )
-}
-export default Laptop

@@ -1,12 +1,12 @@
-// import './Header.js'
-// import './App.css';
-import React from 'react';
+
+import React, { useState } from 'react';
 import {Routes,Route} from 'react-router-dom'
 import Header from './conponent1/Header.js';
 import HomePage from './page/HomePage.js';
-// import {Helmet} from "react-helmet"
+
 import { Helmet } from 'react-helmet-async';
 import Dangky from './page/Dangky.js';
+import Page404 from './page/Page404.js';
 import Dangnhap from './page/Dangnhap.js';
 import Footer from './conponent1/Footer.js'
 import Contact from './page/Contact.js'
@@ -25,14 +25,16 @@ import PCWorkRyzen from './page/PCWorkRyzen';
 import Linhkien from './page/Linhkien.js';
 import Ram from './page/RAM.js';
 import CPU from './page/CPU.js';
+import Cart from './page/Cart.js';
 
 
 
 
 function App() {
 
+
   return (
-    
+     // eslint-disable-next-line
     <React.Fragment>
       <Helmet>
       <script src="js/jquery-1.11.2.min.js"></script>
@@ -73,6 +75,11 @@ function App() {
             <Route path='/linhkien' element={<Linhkien/>}/>
             <Route path='/RAM' element={<Ram/>}/>
             <Route path='/CPU' element={<CPU/>}/>
+             <Route path='/page404' element={<Page404/>}/>
+             <Route path='cart' element={<Cart/>}/>
+            
+           
+            
             
            
 

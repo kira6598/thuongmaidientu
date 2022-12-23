@@ -36,9 +36,9 @@ function Footer(){
                     </h3>
                     <ul className="nav nav-pills nav-stacked">
                             
-                        <li><a href="#"><b>Facebook</b></a></li>
-                        <li><a href="#"><b>Youtube</b></a></li>
-                        <li><a href="#"><b>Instagram</b></a></li>
+                        <li><a href="https://www.facebook.com/sonpham6598"><b>Facebook</b></a></li>
+                        <li><a href="https://www.youtube.com"><b>Youtube</b></a></li>
+                        <li><a href="https://www.instagram.com"><b>Instagram</b></a></li>
                     </ul>
                 </div>
             </div>

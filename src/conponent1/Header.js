@@ -7,13 +7,13 @@ function Header(){
             <div className="container header-middle-cont">
                 <div className="toplogo">
                     <a href="/">
-                        <img src="img/logo.png" />
+                        <img src="img/logo.png" alt="nullllll"/>
                     </a>
                 </div>
                 <div className="shop-menu">
                     <ul>
                         <li className="topsearch">
-                            <a id="topsearch-btn" className="topsearch-btn" href="#"><i className="fa fa-search"></i></a>
+                            <button id="topsearch-btn" className="topsearch-btn" ><i className="fa fa-search"></i></button>
                             <form className="topsearch-form" action="#">
                                 <input type="text" placeholder="Search products" />
                                 <button type="submit"><i className="fa fa-search"></i></button>
@@ -31,10 +31,10 @@ function Header(){
 
                         <li>
                             <div className="h-cart">
-                                <a href="cart.html">
+                                <a href="/cart">
                                     <i className="fa fa-shopping-cart"></i>
                                     <span className="shop-menu-ttl">Giỏ hàng</span> (
-                                    <b>0</b>)
+                                    <b>{localStorage.length}</b>)
                                 </a>
                             </div>
                         </li>
@@ -52,7 +52,7 @@ function Header(){
 
                     {/* <!-- Catalog menu - start --> */}
                     <div className="topcatalog">
-                        <a className="topcatalog-btn" href="#">Danh mục SP</a>
+                        <button className="topcatalog-btn" >Danh mục SP</button>
                         <ul className="topcatalog-list">
                             <li>
                                 <a href="/laptop">
@@ -160,25 +160,25 @@ function Header(){
                         </a>
                         </li>
                         <li >
-                            <a href="#">
+                            <a href="/contact">
                             About Us
                         </a>
                         </li>
                         <li >
-                            <a href="#">
+                            <a href="/page404">
                             Chính sách bảo hành
                         </a>
                             
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="/page404">
                             Chính sách trả góp
                         </a>
                         </li>                      
                         <li className="menu-item-has-children">
-                            <a href="#">
+                            <button className="link-button">
                             Pages <i className="fa fa-angle-down"></i>
-                        </a>
+                        </button>
                             <ul className="sub-menu">
                                 <li>
                                     <a href="/contact">
@@ -186,7 +186,7 @@ function Header(){
                                 </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="https://voz.vn/f/lap-trinh-cntt.91/">
                                     Tin Công Nghệ
                                 </a>
                                 </li>

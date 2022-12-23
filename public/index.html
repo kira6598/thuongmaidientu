@@ -9,10 +9,10 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
  
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script>
+    <!-- <script>
 
       $(document).ready(function(){
-        $("a").click(function(event){
+        $("button").click(function(event){
               var value=event.target.id;
               console.log(event.target.id);
               if(value){
@@ -31,6 +31,9 @@
               
               success:function(data){
                 alert("thanh cong")
+              },
+              error:function(e){
+                alert(e)
               }
               
             }
@@ -42,7 +45,22 @@
       })
           
       
-      </script>
+      </script> -->
+      <script>
+
+        $(document).ready(function(){
+          $("button").click(function(event){
+                var value=event.target.id;
+               
+                console.log(event.target.id);
+                if(value!=null)
+                alert("them thanh cong")
+                localStorage.setItem(`id${value}`,value)
+            })
+          })
+            
+        
+        </script>
 
 </head>
   <body>
@@ -50,6 +68,7 @@
    
   <!-- Header - end -->
     <div id="root"></div>
+
     
     <!--
       This HTML file is a template.
@@ -61,21 +80,6 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-<!-- 
-    <script src="./js/jquery-1.11.2.min.js"></script>
-    <script src="./js/jquery.bxslider.min.js"></script>
-    <script src="./js/fancybox/fancybox.js"></script>
-    <script src="./js/fancybox/helpers/jquery.fancybox-thumbs.js"></script>
-    <script src="./js/jquery.flexslider-min.js"></script>
-    <script src="./js/swiper.jquery.min.js"></script>
-    <script src="./js/jquery.waypoints.min.js"></script>
-    <script src="./js/progressbar.min.js"></script>
-    <script src="./js/ion.rangeSlider.min.js"></script>
-    <script src="./js/chosen.jquery.min.js"></script>
-    <script src="./js/jQuery.Brazzers-Carousel.js"></script>
-    <script src="./js/plugins.js"></script>
-    <script src="./js/main.js"></script>
-    <script src="./https://maps.googleapis.com/maps/api/js?key=AIzaSyDhAYvx0GmLyN5hlf6Uv_e9pPvUT3YpozE"></script> -->
-    <!-- <script src="./js/gmap.js"></script> --> 
+
 </body>
 </html>

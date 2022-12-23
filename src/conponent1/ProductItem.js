@@ -3,9 +3,9 @@ function ProductItem (props){
   
     <div className="prod-i">
                   <div className="prod-i-top">
-                      <a href="#" className="prod-i-img"><img src={props.image} alt="Adipisci aperiam commodi"/></a>
+                      <a href="/#" className="prod-i-img"><img src={props.image} alt="Adipisci aperiam commodi"/></a>
                       
-                      <a href="#!" className="prod-i-buy" id={props.id} >Thêm vào giỏ</a>
+                      <button  className="prod-i-buy" id={props.id} >Thêm vào giỏ</button>
                       <p className="prod-i-properties-label"><i className="fa fa-info"></i></p>
 
                       <div className="prod-i-properties">
@@ -32,7 +32,7 @@ function ProductItem (props){
                       </div>
                   </div>
                   <h3>
-                      <a href="index.html">Adipisci aperiam commodi</a>
+                      <a href="/">Adipisci aperiam commodi</a>
                   </h3>
                   <p className='prod-i-price'>
                       <b>{props.gia_thanh}</b>

@@ -4,7 +4,7 @@ function Contact(){
             <section className="container stylization maincont">
                 <ul className="b-crumbs">
                 <li>
-                    <a href="index.html">
+                    <a href="/">
                         Home
                     </a>
                 </li>

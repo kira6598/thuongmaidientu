@@ -29,7 +29,7 @@ function Dangnhap(){
                         <label for="rememberme">Remember me</label>
                     </p>
                     <p className="auth-lost_password">
-                        <a href="#">Lost your password?</a>
+                        <a href="!#">Lost your password?</a>
                     </p>
                 </form>
             </div>

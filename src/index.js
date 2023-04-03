@@ -2,11 +2,9 @@
 import ReactDOM from 'react-dom/client';
 import {BrowserRouter} from 'react-router-dom'
 import {HelmetProvider} from 'react-helmet-async'
-
 import './css/style.css'
 import './css/flexslider.css'
 import './css/font-awesome.min.css'
-
 import './css/ion.rangeSlider.css'
 import './css/ion.rangeSlider.skinFlat.css'
 import './css/jQuery.Brazzers-Carousel.css'
@@ -15,11 +13,6 @@ import './css/jquery.fancybox.css'
 import './css/media.css'
 import './css/swiper.css'
 import './css/bootstrap.min.css'
-
-
-
-
-
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
@@ -27,13 +20,11 @@ import reportWebVitals from './reportWebVitals';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
-  <React.StrictMode>
+  {/* <React.StrictMode> */}
     <HelmetProvider>
         <App />
-    </HelmetProvider>
-    
-  </React.StrictMode>
-   
+    </HelmetProvider>    
+  {/* </React.StrictMode>*/}
   </BrowserRouter>
  
   

@@ -1,5 +1,6 @@
-import React from "react";
+import React,{useState} from "react";
 import ProductItem from "./ProductItem";
+
 const item= {   
 	"CPU":[
 		{
@@ -98,6 +99,148 @@ function ViewProductLinhkien(props){
 	const ids=props.id;
 	const value =Object.values(item)[ids]
     // console.log(value);
+	const [arr,setArr]=useState(value)
+    const [state,setState]=useState("Mặc định")
+	
+    // console.log(value); lấy value của mảng cần render
+    function handleDefalt(){
+        setArr(value)
+        setState("Mặc định")
+    }
+    
+    function handleAcs(){
+        // bước 1: lúc đầu, khi xử lý cần convert field gia_thanh từ String sang dạng Number để so sánh quickSort được chuẩn và cho nó vào hashMap
+        let newArr = new Map();
+        for(let i=0;i<value.length;i++){
+         newArr.set(i,convert(value[i].gia_thanh))
+        }
+        //end
+
+        //bước 2: cho các value trong hashMap vào arr để so sánh
+        let arrToSort=[]
+        for(let i=0;i<newArr.size;i++){
+         arrToSort.push(newArr.get(i))
+        }
+        let SortedArrValue=QuickSortAsc(arrToSort)
+        // end
+
+        //bước 3: sau khi có được Arr value so sánh rồi thì đối chiếu với Map để lấy keyArr
+        let SortedArrKey = []
+       SortedArrValue.forEach((i) =>{
+            SortedArrKey.push(getByValue(newArr,i))
+       })
+       //end
+
+       // bước 4: sau khi có được keyArr thì nó chính là index đã được sắp xếp của mảng ban đầu
+       let renderAcsArr= []
+       for(let i=0;i<SortedArrKey.length;i++){
+        let index = SortedArrKey[i]
+        renderAcsArr.push(value[index])
+       }
+
+       // các function chức năng
+        function getByValue(map, searchValue) {
+            for (let [key, value] of map.entries()) {
+              if (value === searchValue)
+                return key;
+            }
+          }
+    
+       function convert(string){
+        return Number(string.substring(0,string.length-2).split(",").join(""))
+        
+    }
+
+        function QuickSortAsc(arr){
+        if(arr.length<2){return arr}
+        const pivotIndex=arr.length-1;
+        const pivot = arr[pivotIndex]
+                  
+        let left=[]
+        let right=[]
+        for(let i=0;i<pivotIndex;i++){
+            const currentItem=arr[i]
+            if(currentItem <pivot){
+                left.push(currentItem)
+            }else{
+                right.push(currentItem)
+            }
+        }
+        return [...QuickSortAsc(left),pivot,...QuickSortAsc(right)]       
+       }  
+
+       //end
+
+       setArr(renderAcsArr)
+       setState("Tăng dần")
+          }
+    
+    function handleDec(){
+        // bước 1: lúc đầu, khi xử lý cần convert field gia_thanh từ String sang dạng Number để so sánh quickSort được chuẩn và cho nó vào hashMap
+        let newArr = new Map();
+        for(let i=0;i<value.length;i++){
+         newArr.set(i,convert(value[i].gia_thanh))
+        }
+        //end
+
+        //bước 2: cho các value trong hashMap vào arr để so sánh
+        let arrToSort=[]
+        for(let i=0;i<newArr.size;i++){
+         arrToSort.push(newArr.get(i))
+        }
+        let SortedArrValue=QuickSortDec(arrToSort)
+        // end
+
+        //bước 3: sau khi có được Arr value so sánh rồi thì đối chiếu với Map để lấy keyArr
+        let SortedArrKey = []
+       SortedArrValue.forEach((i) =>{
+            SortedArrKey.push(getByValue(newArr,i))
+       })
+       //end
+
+       // bước 4: sau khi có được keyArr thì nó chính là index đã được sắp xếp của mảng ban đầu
+       let renderDecArr= []
+       for(let i=0;i<SortedArrKey.length;i++){
+        let index = SortedArrKey[i]
+        renderDecArr.push(value[index])
+       }
+
+       // các function chức năng
+        function getByValue(map, searchValue) {
+            for (let [key, value] of map.entries()) {
+              if (value === searchValue)
+                return key;
+            }
+          }
+    
+       function convert(string){
+        return Number(string.substring(0,string.length-2).split(",").join(""))
+        
+    }
+
+        function QuickSortDec(arr){
+        if(arr.length<2){return arr}
+        const pivotIndex=arr.length-1;
+        const pivot = arr[pivotIndex]
+                  
+        let left=[]
+        let right=[]
+        for(let i=0;i<pivotIndex;i++){
+            const currentItem=arr[i]
+            if(currentItem >pivot){
+                left.push(currentItem)
+            }else{
+                right.push(currentItem)
+            }
+        }
+        return [...QuickSortDec(left),pivot,...QuickSortDec(right)]       
+       }  
+
+       //end
+
+       setArr(renderDecArr)
+       setState("Giảm dần")
+          }
 
     return(
         <React.Fragment>
@@ -162,19 +305,16 @@ function ViewProductLinhkien(props){
 
 				{/* <!-- Sorting --> */}
 				<div className="section-sortby" >
-					<p>Mặc định</p>
-					<ul>
+					<p>{state}</p>
+					<ul>						
 						<li>
-							<button className="sorting-button">Sản phẩm nổi bật</button>
+							<button className="sorting-button" onClick={handleAcs}>Giá: Tăng dần</button>
 						</li>
 						<li>
-							<button className="sorting-button">Giá: Tăng dần</button>
-						</li>
-						<li>
-							<button className="sorting-button">Giá: Giảm dần</button>
+							<button className="sorting-button" onClick={handleDec}>Giá: Giảm dần</button>
 						</li>						
 						<li>
-							<button className="sorting-button">Mặc định</button>
+							<button className="sorting-button" onClick={handleDefalt}>Mặc định</button>
 						</li>
 					</ul>
 				</div>
@@ -190,7 +330,7 @@ function ViewProductLinhkien(props){
 				</div>
 				<div className="prod-items section-items" id={ids}>
                         { 
-						value.map( product =>(
+						arr.map( product =>(
                             <ProductItem
                             key={product.id}
                             image={product.image}

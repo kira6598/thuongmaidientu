@@ -1,7 +1,30 @@
-function Header(){
+
+import React, { useState } from "react"
+import NotAuthenticate from "./NotAuthenticate"
+import {useNavigate} from "react-router-dom"
+function NotAuthenticateHeader(){
+
+    const[input,setInput]= useState('')  
+
+
+    const navigate = useNavigate()
+
+    const handleSearch = (e) => {
+        e.preventDefault()
+        if (input) {
+            debugger
+        navigate(`/search?productName=${input}`);
+        }else{
+            return
+        }
+      };
+
+    
+  
+   
     return (
       
-            <header className="header">
+    <header className="header">
         {/* <!-- Logo, Shop-menu - start --> */}
         <div className="header-middle">
             <div className="container header-middle-cont">
@@ -14,19 +37,12 @@ function Header(){
                     <ul>
                         <li className="topsearch">
                             <button id="topsearch-btn" className="topsearch-btn" ><i className="fa fa-search"></i></button>
-                            <form className="topsearch-form" action="#">
-                                <input type="text" placeholder="Search products" />
+                            <form className="topsearch-form" onSubmit={handleSearch} >
+                                <input type="text" placeholder="Search products" onChange={(e)=>setInput(e.target.value)} />
                                 <button type="submit"><i className="fa fa-search"></i></button>
                             </form>
                         </li>
-                        <li className="topauth">
-                            <a href="/dangky">
-                                <i className="fa fa-lock"></i>
-                                <span className="shop-menu-ttl">Đăng kí</span>
-                            </a>
-                            <a href="/dangnhap">
-                                <span className="shop-menu-ttl">Đăng nhập</span>
-                            </a>
+                        <li className="topauth" >{<NotAuthenticate/>}           
                         </li>
 
                         <li>
@@ -55,9 +71,9 @@ function Header(){
                         <button className="topcatalog-btn" >Danh mục SP</button>
                         <ul className="topcatalog-list">
                             <li>
-                                <a href="/laptop">
+                            <button className="list-button">
                                 Laptop
-                            </a>
+                            </button>
                                 <i className="fa fa-angle-right"></i>
                                 <ul>
                                     <li>
@@ -84,9 +100,9 @@ function Header(){
                                 </ul>
                             </li>
                             <li>
-                                <a href="PCG">
+                            <button className="list-button">
                                 PC-Gaming
-                            </a>
+                            </button>
                                 <i className="fa fa-angle-right"></i>
                                 <ul>
                                     <li>
@@ -107,9 +123,9 @@ function Header(){
                                 </ul>
                             </li>
                             <li>
-                                <a href="PCW">
+                            <button className="list-button">
                                 PC-Workstation
-                            </a>
+                            </button>
                                 <i className="fa fa-angle-right"></i>
                                 <ul>
                                     <li>
@@ -126,9 +142,9 @@ function Header(){
                                 </ul>
                             </li>
                             <li>
-                                <a href="/linhkien">
+                            <button className="list-button">
                                 Linh Kiện
-                            </a>
+                                </button>
                                 <i className="fa fa-angle-right"></i>
                                 <ul>
                                     <li>
@@ -165,13 +181,13 @@ function Header(){
                         </a>
                         </li>
                         <li >
-                            <a href="/page404">
+                            <a href="/NotFound">
                             Chính sách bảo hành
                         </a>
                             
                         </li>
                         <li>
-                            <a href="/page404">
+                            <a href="/NotFound">
                             Chính sách trả góp
                         </a>
                         </li>                      
@@ -214,4 +230,4 @@ function Header(){
     
     )
 }
-export default Header
+export default NotAuthenticateHeader

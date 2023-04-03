@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-
+import React, {useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
     const item= {
         "CPU":[
        {
@@ -442,18 +442,15 @@ import React, { useState } from "react";
         }
       
       ]
-      }
-
-   // --start-- colect product from localStorage//
+    }     
+  
+    function Cart(){        
+    // --start-- colect product from LocalStorage//
     var addedProductId= Object.values(localStorage)// return a array
-    
-    var productToShow =[]
-   
-    
-    addedProductId.map((value) => {
+    var productToShow =[]     
+    addedProductId.forEach((value) => {
         var number =Number(value.slice(2))
-        switch (value.slice(0,2)){
-            
+        switch (value.slice(0,2)){            
             case "LT":
                 /*  mã từ LT01 -> LT05:LaptopAcer 
                     mã từ LT06 -> LT10:LaptopAsus
@@ -462,12 +459,11 @@ import React, { useState } from "react";
                 */
                 if(number<=5){
                     var addProduct=item.LaptopAcer.filter(product =>{return product.id===value})
-                   // lấy element từ arr ra. arr chỉ có duy nhất 1 phần tử
+                   // lấy element từ arr ra. arr chỉ có duy nhất 1 phần tử                   
                     productToShow.push( addProduct[0]);                                      
-                    } else if(6<=number&&number<=10){
-                        debugger;
+                    } else if(6<=number&&number<=10){                        
                     var addProduct1=item.LaptopAsus.filter(product =>{return product.id===value})
-                    productToShow.push( addProduct1[0]);
+                        productToShow.push( addProduct1[0]);
                 } else if(11<=number&&number<=16){
                     var addProduct2=item.LaptopMSI.filter(product =>{return product.id===value})
                     productToShow.push( addProduct2[0]);
@@ -479,7 +475,7 @@ import React, { useState } from "react";
                 var addProduct4 = item.PCGaming.filter(product => {return product.id===value})
                 productToShow.push( addProduct4[0]);break;   
             case "pw": 
-                var addProduct5 = item.PCWork.filter(product => {return product.id===value})
+                var addProduct5 = item.PCWork.filter(product => {return product.id===value})                
                 productToShow.push( addProduct5[0]);break;            
             case "RM":
                 var addProduct6 = item.Ram.filter(product => {return product.id===value})
@@ -489,88 +485,217 @@ import React, { useState } from "react";
                     productToShow.push( addProduct7[0]);    break;
             default:
                 console.log('lỗi cmn rồi, éo thấy cmg cả');
-            }
-      
-    })
-    console.log(productToShow);
-    const number = 3;
-    // --end-- colect product from localStorage//
+            }      
+    }) 
+  
+    // console.log(productToShow);
+    // --end-- colect product from LocalStorage//
 
-
-  // tính toán tổng chi phí -start-// 
-        var gia_SP=productToShow.map(item => {return item.gia_thanh})
-        console.log(gia_SP);
-
-      
-        var result=0
-        for (let i=0;i<gia_SP.length;i++){
-            const text =gia_SP[i]        
-            const price = Number(text.substring(0,text.length-2).split(",").join(""))
-            console.log(price);
-            result=result+price;
+        // declare state start
+        const[total,setTotal]=useState(0)
+        const[checkedState,setcheckedState]=useState({})
+        const[detailPrice,setDetaiPrice]=useState({}) 
+        const[quantity,setQuantity]=useState({});   
+        const proRef=useRef([]);             
+        const navigate=useNavigate()
+        // declare state end
+        console.log(checkedState);
+        console.log(detailPrice);
+        console.log(quantity);
+        // handle function start
+        function handleChecked(event){            
+            const checked = event.target.checked;
+            const itemId=event.target.value;
+            const amount = event.target.parentNode.parentNode.childNodes[5].childNodes[0].textContent;            
+            var amountNumb =  Number(amount.substring(0,amount.length-2).split(",").join(""))
+            debugger
+            setcheckedState((prevCheckValue)=>{
+                const newcheckedState = {...prevCheckValue,[itemId]:checked}
+                return newcheckedState
+            })
+            if(checked){                             
+                setTotal(total+amountNumb)           
+            }else{                
+                setTotal(total-amountNumb)
+            }         
         }
-
-        var total = String(result)
-        console.log(total);// đúng r
-        var count=0;
-        var totalPrice=[]
-        for(let i=total.length-1;i>=0;i--){
-            totalPrice.push(total[i]);
-            count++;
-            if(i==0){break;}
-            if(count%3===0){
-                totalPrice.push(",")
-            }
-        }
-        console.log(totalPrice);
-        var lastResult=totalPrice.reverse().join("").concat(" đ")
-        console.log(lastResult); 
-// tính toán tổng chi phí -end-//
-
-
         function handleClear(){
             alert("xóa thành công")
             localStorage.clear();
         }
-    
-    function Show(props){
-        return (
-            <tr>
-                        <td className="cart-image">
-                            <a href="#">
-                                <img src={props.image}/>
-                            </a>
-                        </td>
-                        <td className="cart-ttl">
-                            <a href="product.html">{props.productName}</a>
-                        </td>
-                        <td className="cart-price">
-                            <b>{props.price}</b>
-                        </td>
-                        <td className="cart-quantity">
-                            <p className="cart-qnt">
-                                <input value="1" type="text"/>
-                                <a href="#" className="cart-plus"><i className="fa fa-angle-up"></i></a>
-                                <a href="#" className="cart-minus"><i className="fa fa-angle-down"></i></a>
-                            </p>
-                        </td>
-                        <td className="cart-summ">
-                            <b>{props.price}</b>
-                            <p className="cart-forone">unit price <b className="price" >{props.price}</b></p>
-                        </td>
-                        <td className="cart-del">
-                            <a href="#" className="cart-remove"></a>
-                        </td>
-            </tr>
-        )
-    }
-    function Cart(){
+        function removeItem(e){
+           var key = e.target.id;
+            alert("removed " +key) ;
+            localStorage.removeItem(key)
+        }
+        function handleInc(e){
+            e.preventDefault()
+            const checked = e.target.parentNode.parentNode.parentNode.childNodes[0].childNodes[0].checked
+            if(checked){return}
+            const inputNode= e.target.parentNode.childNodes[0]
+            const buttonCartInc=e.target.id;
+            const inputValue =inputNode.value
+            const inputValueNumb=Number(inputValue)
+            const newQuantity = String(inputValueNumb+1)
+            console.log(newQuantity);
+
+            const priceText=e.target.parentNode.parentNode.parentNode.childNodes[3].childNodes[0].textContent;
+            const priceNumb= Number(priceText.substring(0,priceText.length-2).split(",").join(""))
+            const eachProductBill =newQuantity*priceNumb;   
+            const lastResult = convertToString(eachProductBill)
+            setQuantity((prevQuantityTrace) =>{
+                const newQuantityTrace = {...prevQuantityTrace,[buttonCartInc]:newQuantity}
+                return newQuantityTrace;
+            })        
+            setDetaiPrice((prevBillCheck) =>{
+                 const newBillCheck = {...prevBillCheck,[buttonCartInc]:lastResult}
+                 return newBillCheck
+            })       
+            }
+        function handleDec(e){
+            e.preventDefault()
+            const checked = e.target.parentNode.parentNode.parentNode.childNodes[0].childNodes[0].checked
+            if(checked){return}
+            const inputNode= e.target.parentNode.childNodes[0]
+            const buttonCartInc=e.target.id;
+            const inputValue =inputNode.value
+            const inputValueNumb=Number(inputValue)
+            const newQuantity = String(inputValueNumb-1)
+            const priceText=e.target.parentNode.parentNode.parentNode.childNodes[3].childNodes[0].textContent;
+            const priceNumb= Number(priceText.substring(0,priceText.length-2).split(",").join(""))
+            const eachProductBill =newQuantity*priceNumb;   
+            const lastResult = convertToString(eachProductBill)
+            if(newQuantity<0) return;
+            setQuantity((prevQuantityTrace) =>{
+                const newQuantityTrace = {...prevQuantityTrace,[buttonCartInc]:newQuantity}
+                return newQuantityTrace;
+            })
+            setDetaiPrice((prevBillCheck) =>{
+                const newBillCheck = {...prevBillCheck,[buttonCartInc]:lastResult}
+                return newBillCheck
+           })
+        }
+        function handlePay(e){
+            e.preventDefault();
+            for (const key in checkedState) {
+                if (Object.hasOwnProperty.call(checkedState, key)) {
+                    const element = checkedState[key];
+                     
+                    if(element===true){
+                       const isExist= proRef.current.find(e=>Object.keys(e).includes(key))
+                        if(isExist){
+                            
+                            continue;
+                            
+                        }else{
+                            const ProdItem=productToShow.find(e=>e.id===key)
+                            
+                            proRef.current.push({
+                                [key]:{
+                                    price: detailPrice[key],
+                                    quantity:quantity[key],
+                                    productName:ProdItem.productName,
+                                    unitPrice:ProdItem.gia_thanh
+                                }});
+                        }
+                    }else{
+                        proRef.current= proRef.current.filter(e=>!Object.keys(e).includes(key))
+                    }                    
+                }else{
+                    return;
+                }                
+            }
+            const totalSendInvoice={totalInvoice:convertToString(total)}
+            proRef.current.push(totalSendInvoice)
+            debugger
+            navigate("/bill",{state:{proRef}})
+            console.log(checkedState);
+            console.log(proRef);
+        }
+        // handle function end
+    // accessories function start
+
+        useEffect(()=>{
+            for (const key in productToShow) {
+                if (Object.hasOwnProperty.call(productToShow, key)) {
+                    const element = productToShow[key];
+                    const id= element.id;
+                    setQuantity((prevPrice)=>{
+                        const newDetaiPrice={...prevPrice,[id]:1}
+                        return newDetaiPrice
+                    })
+                    setDetaiPrice((prevQuantity)=>{
+                        const newQuantity={...prevQuantity,[id]:element.gia_thanh};
+                        return newQuantity
+                    })                   
+                    
+                }
+            }
+        },[])
+       function convertToString(price){
+        let textPrice=String(price)
+            var count=0;
+        var totalPrice=[]
+        for(let i=textPrice.length-1;i>=0;i--){
+            totalPrice.push(textPrice[i]);
+            count++;
+            if(i===0){break;}
+            if(count%3===0){
+                totalPrice.push(",")
+            }
+        }       
+        var lastResult=totalPrice.reverse().join("").concat(" đ")
+        return lastResult
+    }  
+        function calculateMoney(e){
+            console.log("changed Input");    
+        }
+        // accessories function end
+        
+        // Component Function start
+        function Show(props){
+            return (
+                <tr>       
+                            <td className="cart-select">
+                            <input 
+                            type="checkbox" 
+                            checked={checkedState[props.id]} 
+                            value={props.id}
+                            onChange={handleChecked}/>
+                            </td>
+                            <td className="cart-image">
+                                <a href={`${props.image}`}>
+                                    <img src={props.image} alt="hehe"/>
+                                </a>
+                            </td>
+                            <td className="cart-ttl">
+                                <a href="product.html">{props.productName}</a>
+                            </td>
+                            <td className="cart-price">
+                                <b>{props.price}</b>
+                            </td>
+                            <td className="cart-quantity">
+                                <p className="cart-qnt">
+                                    <input type="text"  value={quantity[props.id]||1} onChange={calculateMoney}  />
+                                    <button  className="cart-plus fa fa-angle-up" onClick={handleInc} id={props.id} ></button>
+                                    <button  className="cart-minus fa fa-angle-down" onClick={handleDec} id={props.id}></button>
+                                </p>
+                            </td>
+                            <td className="cart-summ">
+                                <b>{detailPrice[props.id]||[props.price]}</b>
+                                <p className="cart-forone">unit price <b className="price">{props.price}</b></p>
+                            </td>
+                            <td className="cart-del">
+                                <a href="/cart" className="cart-remove" id={`id${props.id}`}onClick={removeItem}> </a>
+                            </td>
+                </tr>
+            )
+        }       
+        // Component Function end             
     return(
         
 <main>
     <section className="container stylization maincont">
-
-
         <ul className="b-crumbs">
             <li>
                 <a href="/">
@@ -583,12 +708,13 @@ import React, { useState } from "react";
         </ul>
         <h1 className="main-ttl"><span>Cart</span></h1>
         
-        <form action="#">
+        <form >
 
             <div className="cart-items-wrap">
-                <table className="cart-items">
+                <table className="cart-items" id="myTable">
                     <thead>
                     <tr>
+                        <td className="cart-select">&nbsp; </td>
                         <td className="cart-image">&nbsp;</td>
                         <td className="cart-ttl">Sản phẩm</td>
                         <td className="cart-price">Giá</td>
@@ -598,15 +724,14 @@ import React, { useState } from "react";
                     </tr>
                     </thead>
                     <tbody>
-                        {
-                               
+                        {                              
                                productToShow.map(product =>(
                                 <Show
                                 key={product.id}
+                                id ={product.id}
                                 productName={product.productName}
                                 image={product.image}
-                                price ={product.gia_thanh}
-                                
+                                price ={product.gia_thanh}                                
                                 />
                             )
                             
@@ -616,15 +741,11 @@ import React, { useState } from "react";
                 </table>
             </div>
             <ul className="cart-total">
-                <li className="cart-summ">Tổng : <b id="cost">{lastResult            
-                }</b></li>
+                <li className="cart-summ">Tổng : <b id="cost">{convertToString(total)}</b></li>
             </ul>
             <div className="cart-submit">
-                <div className="cart-coupon">
-                    <input placeholder="your coupon" type="text"/>
-                    <a className="cart-coupon-btn" href="#"><img src="img/ok.png" alt="your coupon"/></a>
-                </div>
-                <a href="#" className="cart-submit-btn">Thanh toán</a>
+                
+                <button className="cart-submit-btn" onClick={handlePay}>Thanh toán</button>
                 <a href="/cart" className="cart-clear" onClick={handleClear}>Clear cart</a>
             </div>
         </form>

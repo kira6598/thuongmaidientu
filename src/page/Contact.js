@@ -48,7 +48,7 @@ function Contact(){
         <div className="social-wrap">
             <div className="social-list">
                 <div className="social-i">
-                    <a rel="nofollow" target="_blank" href="http://facebook.com/">
+                    <a rel="noreferrer" target="_blank" href="http://facebook.com/">
                         <p className="social-i-img">
                             <i className="fa fa-facebook"></i>
                         </p>
@@ -56,7 +56,7 @@ function Contact(){
                     </a>
                 </div>
                 <div className="social-i">
-                    <a rel="nofollow" target="_blank" href="http://google.com/">
+                    <a rel="noreferrer" target="_blank" href="http://google.com/">
                         <p className="social-i-img">
                             <i className="fa fa-google-plus"></i>
                         </p>
@@ -64,7 +64,7 @@ function Contact(){
                     </a>
                 </div>
                 <div className="social-i">
-                    <a rel="nofollow" target="_blank" href="http://twitter.com/">
+                    <a rel="noreferrer" target="_blank" href="http://twitter.com/">
                         <p className="social-i-img">
                             <i className="fa fa-twitter"></i>
                         </p>
@@ -73,7 +73,7 @@ function Contact(){
                 </div>
                 
                 <div className="social-i">
-                    <a rel="nofollow" target="_blank" href="http://instagram.com/">
+                    <a rel="noreferrer" target="_blank" href="http://instagram.com/">
                         <p className="social-i-img">
                             <i className="fa fa-instagram"></i>
                         </p>
@@ -81,7 +81,7 @@ function Contact(){
                     </a>
                 </div>
                 <div className="social-i">
-                    <a rel="nofollow" target="_blank" href="http://youtube.com/">
+                    <a rel="noreferrer" target="_blank" href="http://youtube.com/">
                         <p className="social-i-img">
                             <i className="fa fa-youtube"></i>
                         </p>

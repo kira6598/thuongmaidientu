@@ -2,99 +2,97 @@ import React from 'react';
 import ProductItem from "../conponent1/ProductItem.js"
 
 import QuickView from '../conponent1/QuickView.js'
-const item ={"CPU":[
-    {
-         "id":"C01",
-         "image":"img/CPU/CPU.PNG",
-         "productName":"Intel Pentium",
-         "so_luong_con":"100",
-         "gia_thanh":"1,290,000 đ"
-    },
-    {
-         "id":"C02",
-         "image":"img/CPU/CPU2.PNG",
-         "productName":"Intel Core i7 Gen 12",
-         "so_luong_con":"100",
-         "gia_thanh":"1,990,000 đ"
-    },
-    {
-         "id":"C03",
-         "image":"img/CPU/CPU3.PNG",
-         "productName":"Intel Core i5 Gen 10",
-         "so_luong_con":"100",
-         "gia_thanh":"1,590,000 đ"
-     },
-     {
-         "id":"C04",
-         "image":"img/CPU/CPU4.PNG",
-         "productName":"Intel Core i7 Gen 10",
-         "so_luong_con":"100",
-         "gia_thanh":"1,790,000 đ"
-     },
-     {
-         "id":"C05",
-         "image":"img/CPU/CPU5.PNG",
-         "productName":"Intel Core i9 Unclocked",
-         "so_luong_con":"50",
-         "gia_thanh":"2,790,000 đ"
-     },
-     {
-         "id":"C06",
-         "image":"img/CPU/CPU6.PNG",
-         "productName":"Intel Core i9 Gen 10",
-         "so_luong_con":"50",
-         "gia_thanh":"2,290,000 đ"
-     }
-   
-   
-   ],   
-    "Ram": [
-        {
-            "id":"r01",
-            "image":"img/RAM/RAM1.PNG",
-            "productName":"PATRIOT 8GB",
-            "so_luong_con": "50",
-            "gia_thanh":"800,000 đ"
-        },
-        {
-            "id":"r02",
-            "image":"img/RAM/RAM2.PNG",
-            "productName":"DIMM DDR4 8GB",
-            "so_luong_con": "50",
-            "gia_thanh":"790,000 đ"
-        },
-        {
-            "id":"r03",
-            "image":"img/RAM/RAM3.PNG",
-            "productName":"PATRIOT 8GB",
-            "so_luong_con": "50",
-            "gia_thanh":"640,000 đ"
-        },
-        {
-            "id":"r04",
-            "image":"img/RAM/RAM4.PNG",
-            "productName":"SAMSUNG DDR4 8GB",
-            "so_luong_con": "50",
-            "gia_thanh":"850,000 đ"
-        },
-        {
-            "id":"r05",
-            "image":"img/RAM/RAM5.PNG",
-            "productName":"TRANSCEND 8GB",
-            "so_luong_con": "50",
-            "gia_thanh":"790,000 đ"
-        },
-        {
-            "id":"r06",
-            "image":"img/RAM/RAM6.PNG",
-            "productName":"LEXAR DDR4 16GB",
-            "so_luong_con": "50",
-            "gia_thanh":"1,590,000 đ"
-        }
-      
-      ]
-    
-}
+const item= {   
+	"CPU":[
+		{
+			 "id":"CP01",
+			 "image":"img/CPU/CPU.PNG",
+			 "productName":"Intel Pentium",
+			 "so_luong_con":"100",
+			 "gia_thanh":"1,290,000 đ"
+		},
+		{
+			 "id":"CP02",
+			 "image":"img/CPU/CPU2.PNG",
+			 "productName":"Intel Core i7 Gen 12",
+			 "so_luong_con":"100",
+			 "gia_thanh":"1,990,000 đ"
+		},
+		{
+			 "id":"CP03",
+			 "image":"img/CPU/CPU3.PNG",
+			 "productName":"Intel Core i5 Gen 10",
+			 "so_luong_con":"100",
+			 "gia_thanh":"1,590,000 đ"
+		 },
+		 {
+			 "id":"CP04",
+			 "image":"img/CPU/CPU4.PNG",
+			 "productName":"Intel Core i7 Gen 10",
+			 "so_luong_con":"100",
+			 "gia_thanh":"1,790,000 đ"
+		 },
+		 {
+			 "id":"CP05",
+			 "image":"img/CPU/CPU5.PNG",
+			 "productName":"Intel Core i9 Unclocked",
+			 "so_luong_con":"50",
+			 "gia_thanh":"2,790,000 đ"
+		 },
+		 {
+			 "id":"CP06",
+			 "image":"img/CPU/CPU6.PNG",
+			 "productName":"Intel Core i9 Gen 10",
+			 "so_luong_con":"50",
+			 "gia_thanh":"2,290,000 đ"
+		 }	   
+	     ],
+		"Ram": [
+			{
+				"id":"RM01",
+				"image":"img/RAM/RAM1.PNG",
+				"productName":"PATRIOT 8GB",
+				"so_luong_con": "50",
+				"gia_thanh":"800,000 đ"
+			},
+			{
+				"id":"RM02",
+				"image":"img/RAM/RAM2.PNG",
+				"productName":"DIMM DDR4 8GB",
+				"so_luong_con": "50",
+				"gia_thanh":"790,000 đ"
+			},
+			{
+				"id":"RM03",
+				"image":"img/RAM/RAM3.PNG",
+				"productName":"PATRIOT 8GB",
+				"so_luong_con": "50",
+				"gia_thanh":"640,000 đ"
+			},
+			{
+				"id":"RM04",
+				"image":"img/RAM/RAM4.PNG",
+				"productName":"SAMSUNG DDR4 8GB",
+				"so_luong_con": "50",
+				"gia_thanh":"850,000 đ"
+			},
+			{
+				"id":"RM05",
+				"image":"img/RAM/RAM5.PNG",
+				"productName":"TRANSCEND 8GB",
+				"so_luong_con": "50",
+				"gia_thanh":"790,000 đ"
+			},
+			{
+				"id":"RM06",
+				"image":"img/RAM/RAM6.PNG",
+				"productName":"LEXAR DDR4 16GB",
+				"so_luong_con": "50",
+				"gia_thanh":"1,590,000 đ"
+			}
+		  
+		  ]
+  }
 function Linhkien(){
     return (
         <React.Fragment>

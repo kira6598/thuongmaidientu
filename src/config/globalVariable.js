@@ -1,0 +1,5 @@
+export const BASE_URL="http://localhost:8080"
+export const CART_URL="http://localhost:8080/cart"
+export const PRODUCT_URL="http://localhost:8080/product"
+export const AUTHEN_URL="http://localhost:8080/auth"
+export const USER_URL="http://localhost:8080/data"

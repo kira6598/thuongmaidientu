@@ -5,14 +5,14 @@ function SubscribeForm(){
             <div className="newsletter">
                 <h2>Mua hàng với nhiều ưu đãi hơn</h2>
                 <p>Đăng ký với chúng tôi để nhận được thông báo!</p>
-                <form action="#">
+                <form action="/#">
                     <input placeholder="Your e-mail" type="text" defaultValue={"null"}/>
                     <input name="OK" defaultValue={"Subscribe"} type="submit"/>
                 </form>
             </div>
             <div className="qview-modal">
                 <div className="prod-wrap">
-                    <a href="#">
+                    <a href="/#">
                         <h1 className="main-ttl">
                             <span>Reprehenderit adipisci</span>
                         </h1>
@@ -60,37 +60,37 @@ function SubscribeForm(){
                         <div className="prod-thumbs">
                             <ul className="prod-thumbs-car">
                                 <li>
-                                    <a data-slide-index="0" href="#">
+                                    <a data-slide-index="0" href="/#">
                                         <img src="http://placehold.it/500x525" alt=""/>
                                     </a>
                                 </li>
                                 <li>
-                                    <a data-slide-index="1" href="#">
+                                    <a data-slide-index="1" href="/#">
                                         <img src="http://placehold.it/500x591" alt=""/>
                                     </a>
                                 </li>
                                 <li>
-                                    <a data-slide-index="2" href="#">
+                                    <a data-slide-index="2" href="/#">
                                         <img src="http://placehold.it/500x525" alt=""/>
                                     </a>
                                 </li>
                                 <li>
-                                    <a data-slide-index="3" href="#">
+                                    <a data-slide-index="3" href="/#">
                                         <img src="http://placehold.it/500x722" alt=""/>
                                     </a>
                                 </li>
                                 <li>
-                                    <a data-slide-index="4" href="#">
+                                    <a data-slide-index="4" href="/#">
                                         <img src="http://placehold.it/500x722" alt=""/>
                                     </a>
                                 </li>
                                 <li>
-                                    <a data-slide-index="5" href="#">
+                                    <a data-slide-index="5" href="/#">
                                         <img src="http://placehold.it/500x722" alt=""/>
                                     </a>
                                 </li>
                                 <li>
-                                    <a data-slide-index="6" href="#">
+                                    <a data-slide-index="6" href="/#">
                                         <img src="http://placehold.it/500x722" alt=""/>
                                     </a>
                                 </li>
@@ -100,8 +100,8 @@ function SubscribeForm(){
 
                     <div className="prod-cont">
                         <p className="prod-actions">
-                            <a href="#" className="prod-favorites"><i className="fa fa-heart"></i> Add to Wishlist</a>
-                            <a href="#" className="prod-compare"><i className="fa fa-bar-chart"></i> Compare</a>
+                            <a href="/#" className="prod-favorites"><i className="fa fa-heart"></i> Add to Wishlist</a>
+                            <a href="/#" className="prod-compare"><i className="fa fa-bar-chart"></i> Compare</a>
                         </p>
                         <div className="prod-skuwrap">
                             <p className="prod-skuttl">Color</p>
@@ -126,13 +126,13 @@ function SubscribeForm(){
                             <div className="offer-props-select">
                                 <p>XL</p>
                                 <ul>
-                                    <li><a href="#">XS</a></li>
-                                    <li><a href="#">S</a></li>
-                                    <li><a href="#">M</a></li>
-                                    <li className="active"><a href="#">XL</a></li>
-                                    <li><a href="#">L</a></li>
-                                    <li><a href="#">4XL</a></li>
-                                    <li><a href="#">XXL</a></li>
+                                    <li><a href="/#">XS</a></li>
+                                    <li><a href="/#">S</a></li>
+                                    <li><a href="/#">M</a></li>
+                                    <li className="active"><a href="/#">XL</a></li>
+                                    <li><a href="/#">L</a></li>
+                                    <li><a href="/#">4XL</a></li>
+                                    <li><a href="/#">XXL</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -142,11 +142,11 @@ function SubscribeForm(){
                             </p>
                             <p className="prod-qnt">
                                 <input type="text" defaultValue={1}/>
-                                <a href="#" className="prod-plus"><i className="fa fa-angle-up"></i></a>
-                                <a href="#" className="prod-minus"><i className="fa fa-angle-down"></i></a>
+                                <a href="/#" className="prod-plus"><i className="fa fa-angle-up"></i></a>
+                                <a href="/#" className="prod-minus"><i className="fa fa-angle-down"></i></a>
                             </p>
                             <p className="prod-addwrap">
-                                <a href="#" className="prod-add">Add to cart</a>
+                                <a href="/#" className="prod-add">Add to cart</a>
                             </p>
                         </div>
                         <ul className="prod-i-props">
@@ -171,7 +171,7 @@ function SubscribeForm(){
                             <li>
                                 <b>Color</b> Blue, Red
                             </li>
-                            <li><a href="#" className="prod-showprops">All Features</a></li>
+                            <li><a href="/#" className="prod-showprops">All Features</a></li>
                         </ul>
                     </div>
                 </div>

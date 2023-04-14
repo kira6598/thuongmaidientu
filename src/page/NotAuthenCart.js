@@ -631,6 +631,7 @@ import { useNavigate } from "react-router-dom";
                     
                 }
             }
+ // eslint-disable-next-line react-hooks/exhaustive-deps
         },[])
        function convertToString(price){
         let textPrice=String(price)

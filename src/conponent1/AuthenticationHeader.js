@@ -1,7 +1,6 @@
-import { useEffect, useState } from "react"
+
 import Authenticated from "./Authenticated"
-import axios from "axios"
-import { CART_URL } from "../config/globalVariable"
+
 
 function AuthenticationHeader(){
     // const [count,setCount]=useState(0)

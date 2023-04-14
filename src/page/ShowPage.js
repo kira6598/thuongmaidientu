@@ -5,8 +5,7 @@ import SearchProduct from "../conponent1/SearchProduct";
 function ShowPage(){
     const [param]=useSearchParams()
     const productName=param.get('productName')
-    console.log(typeof(productName));
-    debugger
+
     return(
         <React.Fragment>
             <main>

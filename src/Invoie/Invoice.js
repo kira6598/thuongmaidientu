@@ -15,17 +15,14 @@ function Invoice(){
 			productInvoice.push(...element)
 		}
 	}
-	console.log(productInvoice);
-	const TotalInvoice=productInvoice[productInvoice.length-1]
-	
+
+	const TotalInvoice=productInvoice[productInvoice.length-1]	
+	const productInvoiceSliced = productInvoice.slice(0,productInvoice.length-1)
 	const date =new Date()
 	const InvoiceNumb=date.valueOf()
 	const currentDate= date.toLocaleString()
-
-	const total = "1,000,000,000 đ"
-	
+	const total = "1,000,000,000 đ"	
 	// function start
-
 	function convertStringToNumb(string){
 		return Number(string.substring(0,string.length-2).split(",").join(""));
 	}
@@ -56,35 +53,32 @@ function Invoice(){
 	function handleConvertToJpg (){
 		const element = document.getElementById('bill');
 		// console.log(element);
-		html2canvas(element).then(canvas =>{
-			const jpgUrl = canvas.toDataURL('image/jpeg');
-			console.log(jpgUrl);
-			axios.post(`${CART_URL}/save-image`,JSON.stringify(jpgUrl) ,
-			{headers:{
-				'Content-Type':'application/json'
-			}}
-			)
-			.then(response => {
-                console.log(response.data);
-            })
-            .catch(error => {
-                console.error(error);
-            })		
-		});	
+		// html2canvas(element).then(canvas =>{
+		// 	const jpgUrl = canvas.toDataURL('image/jpeg');
+		// 	console.log(jpgUrl);
+		// 	axios.post(`${CART_URL}/save-image`,JSON.stringify(jpgUrl) ,
+		// 	{headers:{
+		// 		'Content-Type':'application/json'
+		// 	}}
+		// 	)
+		// 	.then(response => {
+        //         console.log(response.data);
+        //     })
+        //     .catch(error => {
+        //         console.error(error);
+        //     })		
+		// });	
 
-		setTimeout(()=>{
-			window.location='/'
-		},5000)
+		// setTimeout(()=>{
+		// 	window.location='/'
+		// },5000)
 	}
-
-	
 
 	useEffect(()=>{
 		handleConvertToJpg()
 	},[])
 
 	function InvoiceItem(props){
-
 		return(	
 			<tr>
 				
@@ -96,9 +90,7 @@ function Invoice(){
 			</tr>		
 		)
 	}
-
-
-
+	console.log(productInvoiceSliced);
     return (
         <main id='bill'>
 		<header className='invoice-header'>
@@ -110,10 +102,7 @@ function Invoice(){
 			</address>
 		</header>
         <article>
-			{/* <h1>Recipient</h1> */}
-			{/* <address >
-				<p>Some Company<br/>c/o Some Guy</p>
-			</address> */}
+
 			<table className="meta">
 				<tr>
 					<th><span >Invoice #</span></th>
@@ -140,21 +129,30 @@ function Invoice(){
 				</thead>
 				<tbody>
 					{
-						productInvoice.map(product=>
-							{
-								if(productInvoice.indexOf(product)+1===productInvoice.length) return
-								return(
-									<InvoiceItem 
-									key={product.id}
-									productName={product.productName}
-									quantity={product.quantity}
-									price={product.price}
-									unitPrice={product.unitPrice}
-									stt={productInvoice.indexOf(product)+1}										
+						productInvoiceSliced.map(product=>(
+							<InvoiceItem 
+							key={product.id}
+							productName={product.productName}
+							quantity={product.quantity}
+							price={product.price}
+							unitPrice={product.unitPrice}
+							stt={productInvoice.indexOf(product)+1}						
+							/>
+						)
+							// {
+								// if(productInvoice.indexOf(product)+1===productInvoice.length) return;
+							// 	return (
+							// 		<InvoiceItem 
+							// 		key={product.id}
+							// 		productName={product.productName}
+							// 		quantity={product.quantity}
+							// 		price={product.price}
+							// 		unitPrice={product.unitPrice}
+							// 		stt={productInvoice.indexOf(product)+1}						
 									
-									/>
-								)
-							}
+							// 		/>
+							// 	)
+							// }
 							)
 					}
 				</tbody>

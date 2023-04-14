@@ -12,7 +12,7 @@ import { CART_URL } from "../config/globalVariable";
                     'Content-Type':'application/json'                   
                 }
             }).then(respone=> setData(respone.data))        
-
+ // eslint-disable-next-line react-hooks/exhaustive-deps
         },[])
 
         // declare state start
@@ -60,9 +60,17 @@ import { CART_URL } from "../config/globalVariable";
                 setTotal(total-amountNumb)
             }         
         }
-        function handleClear(){
-            alert("xóa thành công")
-            localStorage.clear();
+        function handleClear(e){
+            e.preventDefault();
+           var key = e.target.id;
+           axios.delete(`${CART_URL}/delete/${userId}?productId=all`,{
+            headers:{
+                'Content-Type':'application/json'
+            }
+           })
+           .then(()=>{
+            sessionStorage.setItem("itemCount","0")
+            window.location='/cart'})
         }
         function removeItem(e){
             e.preventDefault();
@@ -272,7 +280,7 @@ import { CART_URL } from "../config/globalVariable";
             <div className="cart-submit">
                 
                 <button className="cart-submit-btn" onClick={handlePay} >Thanh toán</button>
-                <a  className="cart-clear" onClick={handleClear}>Clear cart</a>
+                <button className="cart-clear" onClick={handleClear}>Clear cart</button>
             </div>
         </form>
      

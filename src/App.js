@@ -29,10 +29,11 @@ import Active from './page/Active.js';
 import AddProdroduct from './page/AddProduct';
 import Invoice from './Invoie/Invoice.js';  
 import Test from './page/testComponent'
+
 function App() {  
   const location= useLocation();
 
-  let hideGeneralHeader = location.pathname!=='/dangnhap'&&location.pathname!=='/bill' 
+  let hideGeneralHeader = location.pathname!=='/dangnhap'&&location.pathname!=='/bill'
   let logic =sessionStorage.getItem("Authentication")    
   const [authenHeader,setAuthenHeader]=useState(<NotAuthenticateHeader/>)
   const [userCart,setUserCart]=useState(<NotAuthenCart/>)   
@@ -94,6 +95,7 @@ function App() {
             <Route path='/search' element ={<ShowPage/>}/>
             <Route path='/bill' element={<Invoice/>}/>
             <Route path='/test' element={<Test/>}/>
+
 
             
         </Routes>
